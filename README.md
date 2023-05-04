@@ -4,9 +4,9 @@ Address Forecast is a simple rails app to demonstrate the use of APIs to fetch a
 ## Run Locally
 `rails s`
 
-By default the port is 3000 and when running the main page is viewable at `http://localhost:3000`.  The port can be overriden by setting the PORT environment variable.
+By default the port is 3000 and when running the main page is viewable at `http://localhost:3000`.  The port can be overriden by setting the `PORT` environment variable.
 
-The geocode API has an auth parameter defined in the documentation.  Set the value sent for this auth parameter using the GEOCODE_AUTH environment variable, however the API calls appear to be succeeding at the moment even without the auth parameter supplied.
+The geocode API has an auth parameter defined in the documentation.  Set the value sent for this auth parameter using the `GEOCODE_AUTH` environment variable, however the API calls appear to be succeeding at the moment even without the auth parameter supplied.
 
 ## Running Tests
 `rails test`
@@ -27,4 +27,4 @@ The forecast service uses the `weather.gov` API to get a forecast for a given la
 1. Find the weather forecast office and grid x & y for a given latitude and longitude.  These values are required to fetch the forecast data
 2. Use the grid office, x, and y values to fetch forecast data
 
-NOTE: Forecast data is for a given geographic "grid".  The HomeController is caching this data by zip code for 30 minutes per the spec but this can introduce some variance or inaccuracies where multiple grids exist for a given zip code.
+NOTE: Forecast data is for a given geographic "grid".  The HomeController is caching this data by zip code for 30 minutes per the spec but this can introduce some variance or inaccuracies if multiple grids exist for a given zip code.
