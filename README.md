@@ -2,11 +2,11 @@
 Address Forecast is a simple rails app to demonstrate the use of APIs to fetch and display a localized weather forecast for a given address.
 
 ## Run Locally
-`rails s`
+`GEOCODE_AUTH='{{GEOCODE.XYZ AUTH CODE HERE}}' rails s`
 
 By default the port is 3000 and when running the main page is viewable at `http://localhost:3000`.  The port can be overriden by setting the `PORT` environment variable.
 
-The geocode API has an auth parameter defined in the documentation.  Set the value sent for this auth parameter using the `GEOCODE_AUTH` environment variable, however the API calls appear to be succeeding at the moment even without the auth parameter supplied.
+The geocode API has an auth parameter defined in the documentation.  Set the value sent for this auth parameter using the `GEOCODE_AUTH` environment variable.  This might be unnecesary since some calls to the API seemed to be succeeding even with the auth parameter blank or omitted, but if the forecast lookup fails invalid geocode auth is a likely cause.
 
 ## Running Tests
 `rails test`
