@@ -1,0 +1,18 @@
+{
+    "standard": {
+        "stnumber": "3079",
+        "addresst": "WHITLOW WAY",
+        "statename": "TX",
+        "postal": "78664",
+        "region": "TX",
+        "city": "Round Rock",
+        "prov": "US",
+        "countryname": "United States of America",
+        "confidence": "1.00"
+    },
+    "longt": "-97.62642",
+    "alt": {},
+    "elevation": {},
+    "remaining_credits": "-44",
+    "latt": "30.53413"
+}

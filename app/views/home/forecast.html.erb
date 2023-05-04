@@ -1,8 +1,27 @@
 <turbo-frame id="forecast">
     <h2>Forecast</h2>
+    <% unless @fresh_data %>
+        <h3>(Cached) Last Updated @ <%= @fetched_at.localtime.strftime('%l:%M%p') %> </h3>
+    <% end %>
+    <%= "Currently #{@current[:temp]}, #{@current[:desc]}" %>
     <table>
-        <tr><td>Current Temp</td><td><%= @current_temp %></td></tr>
-        <tr><td>High</td><td><%= @high_temp %></td></tr>
-        <tr><td>Low</td><td><%= @low_temp %></td></tr>
+        <thead>    
+            <tr>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Temp</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @periods.map do |period| %>
+                <tr>
+                    <td><%= period[:start_time].localtime.strftime('%Y-%M-%d') %></td>
+                    <td><%= period[:start_time].localtime.strftime('%l:%M %P') %></td>
+                    <td><%= period[:temp] %></td>
+                    <td><%= period[:desc] %></td>
+                </tr>
+            <% end %>
+        </tbody>
     </table>
 </turbo-frame>

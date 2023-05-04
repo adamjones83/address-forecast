@@ -5,8 +5,8 @@
     <body>
     <turbo-frame id="forecast">
         <h2>Get Local Forecast</h2>
-        <form method='POST'>
-        Address: <input type='text' id='address' />
+        <form method='GET' action='/forecast'>
+        Address: <input type='text' name='address' />
         <button type='submit'>Submit</button>
         </form>
     </turbo-frame>    
